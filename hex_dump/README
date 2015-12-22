@@ -1,0 +1,26 @@
+Hex Dump Project - ~/hexdump directory
+
+We talked a little bit about how to convery between binary, decimal, and hexidecimal early on in the Semester, but haven't done much with it. So for this extra credit assignment (Due 11/13/15) we will construct a tool that will 
+be useful in this class, CSCI45, and our later computer science careers.
+
+The Assignment: You will write a program that will read binary data from the standard in until an end of file is reached (i.e. cin becomes invalid). You cannot ignore whitespace. The easiest way to do this is to read a character 
+at a time from cin, and store it into a vector.
+
+We will then print out all that data, in 32 bit increments, in five columns as such:
+
+1st column (index): The byte number we're on in hex format. For example, for the first row, it will be 0, for the second row 4, for the third row 8, the fourth C, the fifth F, and so forth (since we're outputting 32 bits or four 
+bytes at a time). This will be useful for us to see where we are within a file.
+
+2nd column (binary - 1 bit per character): The 32 bits in binary format. For example: "000100FF" in hex is 00000000000000010000000011111111 in binary.
+
+3rd column (Octal - 3 bits per character): You will convert the numbers from binary to octal and display them in the next column. For example, 00FF will convert to 377. Since 3 doesn't divide into 32 evenly, pad the first octal 
+number with a 0 bit.
+
+4th column (Hex - 4 bits per character): It will be four characters in hex, such as "000100FF".
+
+5th column (ASCII - 8 bits per character): You will display the 32 bits in ASCII format, as four characters. If the character is a printable ASCII code, print it out, otherwise print it as a space or other placeholder character. 
+Look up the cctype header file for how to tell if a character is printable or not. For example, "51512121" in hex is "QQ!!" in ASCII.
+
+Make the columns line up nicely.
+
+When done, you will have a nice little tool that you can use to inspect executable files and see what make them tick, and you will have mastered converting between various binary formats.
